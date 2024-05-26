@@ -1,11 +1,11 @@
-export default interface DaftarSekolahAttributes {
+export default interface SchoolListAttributes {
     id: string;
     category: string;
     name: string;
     address: string;
     postal_code: string;
-    provinsi_id: number;
-    kabupaten_id: number;
+    province_id: number;
+    regency_id: number;
     phone_number: string;
     email: string;
     facebook: string;

@@ -1,11 +1,11 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import db from "../../config/database"
-import DaftarSekolahAttributes from "./dto";
+import SchoolListAttributes from "./dto";
 
-interface DaftarSekolahCreationAttributes extends Optional<DaftarSekolahAttributes, 'id'> { };
-interface DaftarSekolahInstance extends Model<DaftarSekolahAttributes, DaftarSekolahCreationAttributes>, DaftarSekolahAttributes { };
+interface SchoolListCreationAttributes extends Optional<SchoolListAttributes, 'id'> { };
+interface SchoolListInstance extends Model<SchoolListAttributes, SchoolListCreationAttributes>, SchoolListAttributes { };
 
-const DaftarSekolah = db.define<DaftarSekolahInstance>('daftar_sekolah', {
+const SchoolList = db.define<SchoolListInstance>('school_list', {
     id: {
         type: DataTypes.STRING,
         primaryKey: true,
@@ -27,11 +27,11 @@ const DaftarSekolah = db.define<DaftarSekolahInstance>('daftar_sekolah', {
         type: DataTypes.STRING(5),
         allowNull: false
     },
-    provinsi_id: {
+    province_id: {
         type: DataTypes.STRING(2),
         allowNull: false
     },
-    kabupaten_id: {
+    regency_id: {
         type: DataTypes.STRING(4),
         allowNull: false
     },
@@ -54,4 +54,4 @@ const DaftarSekolah = db.define<DaftarSekolahInstance>('daftar_sekolah', {
 })
 
 
-export default DaftarSekolah
+export default SchoolList
