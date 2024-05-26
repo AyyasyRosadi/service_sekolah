@@ -24,23 +24,23 @@ DROP TABLE IF EXISTS `daftar_sekolah`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `daftar_sekolah` (
   `id` varchar(255) NOT NULL,
-  `kategori` varchar(255) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `alamat` varchar(255) NOT NULL,
-  `kode_pos` int NOT NULL,
   `provinsi_id` varchar(2) NOT NULL,
   `kabupaten_id` varchar(4) NOT NULL,
-  `no_telepon` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `facebook` varchar(255) NOT NULL,
-  `jumlah_siswa` int NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `postal_code` int NOT NULL,
+  `phone_number` varchar(255) NOT NULL,
+  `total_students` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `provinsi_id` (`provinsi_id`),
   KEY `kabupaten_id` (`kabupaten_id`),
-  CONSTRAINT `daftar_sekolah_ibfk_25` FOREIGN KEY (`provinsi_id`) REFERENCES `provinsi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `daftar_sekolah_ibfk_26` FOREIGN KEY (`kabupaten_id`) REFERENCES `kabupaten` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `daftar_sekolah_ibfk_29` FOREIGN KEY (`provinsi_id`) REFERENCES `provinsi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `daftar_sekolah_ibfk_30` FOREIGN KEY (`kabupaten_id`) REFERENCES `kabupaten` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -62,11 +62,11 @@ DROP TABLE IF EXISTS `kabupaten`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `kabupaten` (
   `id` varchar(4) NOT NULL,
-  `nama` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `provinsi_id` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_provinsi` (`provinsi_id`),
-  CONSTRAINT `kabupaten_ibfk_1` FOREIGN KEY (`provinsi_id`) REFERENCES `provinsi` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `kabupaten_ibfk_1` FOREIGN KEY (`provinsi_id`) REFERENCES `provinsi` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -89,7 +89,7 @@ DROP TABLE IF EXISTS `provinsi`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `provinsi` (
   `id` varchar(2) NOT NULL,
-  `nama` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -113,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-26 17:48:41
+-- Dump completed on 2024-05-26 20:01:47

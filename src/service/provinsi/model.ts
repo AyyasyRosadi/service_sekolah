@@ -12,7 +12,7 @@ const Provinsi = db.define<ProvinsiInstance>('provinsi', {
         type: DataTypes.STRING(2),
         primaryKey: true,
     },
-    nama: {
+    name: {
         type: DataTypes.STRING,
     }
 },{

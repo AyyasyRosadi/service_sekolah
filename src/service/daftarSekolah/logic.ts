@@ -10,10 +10,10 @@ class DaftarSekolahLogic extends LogicBase {
         const allDaftarSekolah = await DaftarSekolah.findAll({
             include: [{
                 model: Provinsi,
-                attributes: ['nama']
+                attributes: ['name']
             }, {
                 model: Kabupaten,
-                attributes: ['nama']
+                attributes: ['name']
             }]
         })
         return this.message(200, allDaftarSekolah)
@@ -21,16 +21,16 @@ class DaftarSekolahLogic extends LogicBase {
     public async createDaftarSekolah(data: Omit<DaftarSekolahAttributes, 'id'>): Promise<messageAttribute<defaultMessage>> {
         try {
             await DaftarSekolah.create({
-                kategori: data.kategori,
-                nama: data.nama,
-                alamat: data.alamat,
-                kode_pos: data.kode_pos,
+                category: data.category,
+                name: data.name,
+                address: data.address,
+                postal_code: data.postal_code,
                 provinsi_id: data.provinsi_id,
                 kabupaten_id: data.kabupaten_id,
-                no_telepon: data.no_telepon,
+                phone_number: data.phone_number,
                 email: data.email,
                 facebook: data.facebook,
-                jumlah_siswa: data.jumlah_siswa
+                total_students: data.total_students
             })
             return this.message(200, { message: "Berhasil menambahkan daftar sekolah" })
         } catch {

@@ -11,7 +11,7 @@ const Kabupaten = db.define<KabupatenInstance>('kabupaten', {
         type: DataTypes.STRING(4),
         primaryKey: true,
     },
-    nama: {
+    name: {
         type: DataTypes.STRING,
     },
     provinsi_id: {

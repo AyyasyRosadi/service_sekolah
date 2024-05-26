@@ -1,5 +1,5 @@
 export default interface KabupatenAttributes {
     id:string;
-    nama:string;
+    name:string;
     provinsi_id:string;
 }
