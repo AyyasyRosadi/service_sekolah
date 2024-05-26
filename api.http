@@ -3,3 +3,20 @@
 
 ###
 GET {{host}}/provinsi
+
+###
+POST {{host}}/daftar-sekolah
+Content-Type: application/json
+
+{
+    "category":"Negeri",
+    "name":"SMA 1 Jakarta",
+    "address":"Jln Cikung 17, Jakarta Pusat",
+    "postal_code":"12345",
+    "provinsi_id":"31",
+    "kabupaten_id":"3173",
+    "phone_number":"0871938114080",
+    "email":"example@gmail.com",
+    "facebook":"example",
+    "total_students":300
+}
