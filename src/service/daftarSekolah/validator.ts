@@ -13,7 +13,7 @@ class DaftarSekolahValidator extends Validator {
         check('phone_number').isString().notEmpty().withMessage('no telepon tidak boleh kosong'),
         check('email').isString().notEmpty().withMessage('email tidak boleh kosong'),
         check('facebook').isString().notEmpty().withMessage('facebook tidak boleh kosong'),
-        check('total_students').isString().notEmpty().withMessage('jumlah siswa tidak boleh kosong'),
+        check('total_students').isInt().notEmpty().withMessage('jumlah siswa tidak boleh kosong'),
         this.validate
     ]
 }
