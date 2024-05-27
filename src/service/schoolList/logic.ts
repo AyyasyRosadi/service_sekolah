@@ -34,7 +34,7 @@ class SchoolListLogic extends LogicBase {
             })
             return this.message(200, { message: "Berhasil menambahkan daftar sekolah" })
         } catch {
-            return this.message(403, { message: "error" })
+            return this.message(400, { message: "error" })
         }
     }
 }

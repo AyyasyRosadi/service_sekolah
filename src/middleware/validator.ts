@@ -6,7 +6,7 @@ class Validator {
     protected validate = (req: Request, res: Response, next: NextFunction) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.status(403).json({msg:"Data invalid"})
+            return res.status(415).json({message:"Data masih belum tepat"})
         }
         next()
     }
